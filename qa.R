@@ -49,12 +49,15 @@ people |> filter(orcId == "0000-0003-2195-2978")
 people |> filter(orcId == "0000-0002-1744-6776")
 
 # you check results using another package
-swecris::swecris_projects_from_orcid("0000-0003-2195-2978")$peopleList |>
+remotes::install_github("KTH-Library/swecris")
+library(swecris)
+
+swecris_projects_from_orcid("0000-0003-2195-2978")$peopleList |>
   filter(orcId == "0000-0003-2195-2978")
 
 # you double-check results again at the source using a bash oneliner....
 # what are your conclusions and how do you suggest proceeding based on your findings?
 paste("curl -s 'https://swecris-api.vr.se/v1/projects/persons/orcId/0000-0003-2195-2978'",
   "-H 'authorization: bearer VRSwecrisAPI2023-2' | json_pp | jq '.[70].peopleList'") |>
-  system(intern = TRUE) |> jsonlite::fromJSON() |> as_tibble()
+  system(intern = TRUE) |> jsonlite::fromJSON() |> tibble::as_tibble()
 
