@@ -14,11 +14,11 @@ exercise involving creation of a Quarto Dashboard.
 > Create a [Quarto
 > Dashboard](https://quarto.org/docs/dashboards/layout.html) using open
 > data from [OpenAlex](https://openalex.org/Research.pdf) which
-> highlights where (ie in which journals/venues) collaborations between
-> KTH, Stockholm University and Karolinska Institute are published most
-> frequently. Render the content and bundle the result in a container as
-> static web content to be served from the subpath
-> “dashboards/dauf-exercise”.
+> highlights in which journals/venues the three universities KTH,
+> Stockholm University and Karolinska Institutet have most frequently
+> co-published in the last ten years. Render the content and bundle the
+> result in a container as static web content to be served from the
+> subpath “dashboards/dauf-exercise”.
 
 Aspects to consider:
 
