@@ -38,9 +38,11 @@ people |> filter(!is.na(orcId)) |> group_by(fullName) |>
   print(n = 50)
 
 # you run some manual checkups on a few datapoints
-checkup <- function(orcId)
+checkup <- function(orcId){
   paste0("https://orcid.org/", orcId) |>
   browseURL()
+}
+
 
 "0000-0003-2195-2978" |> checkup()
 "0000-0002-1744-6776" |> checkup()
