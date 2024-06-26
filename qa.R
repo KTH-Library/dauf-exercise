@@ -38,7 +38,7 @@ people |> filter(!is.na(orcId)) |> group_by(fullName) |>
   print(n = 50)
 
 # you run some manual checkups on a few datapoints
-checkup <- function(orcId){
+checkup <- function(orcId) {
   paste0("https://orcid.org/", orcId) |>
   browseURL()
 }
@@ -60,6 +60,6 @@ swecris_projects_from_orcid("0000-0003-2195-2978")$peopleList |>
 # you double-check results again at the source using a bash oneliner....
 # what are your conclusions and how do you suggest proceeding based on your findings?
 paste("curl -s 'https://swecris-api.vr.se/v1/projects/persons/orcId/0000-0003-2195-2978'",
-  "-H 'authorization: bearer VRSwecrisAPI2023-2' | json_pp | jq '.[70].peopleList'") |>
+  "-H 'authorization: bearer RWNDZ3FDRVVSMmNUNlZkMkN3' | json_pp | jq '.[70].peopleList'") |>
   system(intern = TRUE) |> jsonlite::fromJSON() |> tibble::as_tibble()
 
